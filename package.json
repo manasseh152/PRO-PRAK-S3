@@ -1,0 +1,25 @@
+{
+  "name": "pro-prak-s3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass -w style/scss:style/css",
+    "minify": "sass -w style/scss:style/css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manasseh152/PRO-PRAK-S3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manasseh152/PRO-PRAK-S3/issues"
+  },
+  "homepage": "https://github.com/manasseh152/PRO-PRAK-S3#readme",
+  "devDependencies": {
+    "sass": "^1.49.7"
+  }
+}
