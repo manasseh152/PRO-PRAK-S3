@@ -10,4 +10,8 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --bg-color: white;
+}
+
 /*# sourceMappingURL=style.css.map */
