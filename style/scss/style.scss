@@ -1,8 +1,11 @@
+@use './abstracts/colors.scss';
+@use './components/navbar.scss';
 
 html {
   font-size: 20px;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	font-family: roboto;
 }
 
 *,
