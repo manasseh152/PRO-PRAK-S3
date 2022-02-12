@@ -35,8 +35,6 @@
     }
   }
 
-
-
   input {
     height: 36px;
     width: 268px;
@@ -78,10 +76,53 @@
         margin-right: .8rem;
       }
     }
+    opacity: 0;
+    transform: scaleX(0);
+    transition: 
+      opacity 1s ease-in
+      transform 1s ease-in
+    ;
   }
   li:active > .sub-account,
   li:focus-within > .sub-account
   {
     display: block;
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .sub-notivication {
+    position: absolute;
+    inset: 60px 0 auto auto;
+    height: 150px;
+    width: 300px;
+    padding: 0 .5rem;
+    display: none;
+    flex-direction: column;
+    gap: .2rem;
+    background-color: var(--bg-element);
+    h4 {
+      font-weight: 200;
+      font-size: .9rem;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: .2rem;
+      * {
+        font-size: 0.7rem;
+      }
+      h5 {
+
+      }
+      p {
+        font-weight: 300;
+      }
+    }
+  }
+  li:active > .sub-notivication,
+  li:focus-within > .sub-notivication
+  {
+    display: flex;
   }
 }

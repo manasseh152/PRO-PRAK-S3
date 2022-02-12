@@ -1,5 +1,6 @@
 @use './abstracts/colors.scss';
-@use './components/navbar.scss';
+@use './components';
+
 
 html {
   font-size: 20px;
@@ -12,4 +13,18 @@ html {
 *::after,
 *::before {
 	box-sizing: inherit;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: .5rem;
+}
+
+.column {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: .2rem;
 }
