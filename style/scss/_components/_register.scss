@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register {
+  height: 480px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-element);
+  border-radius: 2.5vh;
+}
+.form {
+  width: 320px;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.input {
+  border: none;
+  color: inherit;
+  background: 0;
+  outline: 0;
+  border-bottom: 2px solid var(--clr-text);
+  &::placeholder {
+    color: var(--clr-text);
+  }
+}
+
+.test {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}

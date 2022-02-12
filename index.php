@@ -13,6 +13,10 @@
   <nav class="main-nav">
     <?php include("./php/components/navbar.php"); ?>
   </nav>
+
+  <div class="center">
+  
+  </div>
 </body>
 
 </html>
