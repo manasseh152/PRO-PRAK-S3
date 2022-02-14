@@ -26,10 +26,33 @@ h6 {
   color: var(--clr-title);
 }
 
+.light {
+  --bg-body: var(--color-4);
+  --bg-element: var(--color-2);
+  --accent: var(--color-5);
+  --clr-title: var(--color-9);
+  --clr-text: var(--color-8);
+  svg {
+    fill: var(--color-8);
+  }
+  .stroke {
+    fill: none;
+    stroke: var(--color-8);
+  }
+}
+
 .dark {
   --bg-body: var(--color-6);
   --bg-element: var(--color-7);
   --accent: var(--color-5);
   --clr-title: var(--color-1);
   --clr-text: var(--color-3);
+  svg {
+    fill: var(--color-3);
+  }
+  .stroke {
+    fill: none;
+    stroke: var(--color-3);
+  }
 }
+

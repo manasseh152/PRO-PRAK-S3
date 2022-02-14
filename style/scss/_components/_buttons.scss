@@ -4,6 +4,7 @@
   background: 0;
   color: inherit;
   background-color: var(--accent);
+  color: var(--color-1);
   font-size: 1.2rem;
   padding: .4em;
   border-radius: 100vh;
@@ -12,3 +13,53 @@
     opacity: .9;
   }
 }
+
+// toggle switch
+
+.toggle {
+  margin-left: auto;
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 1.2em;
+  
+  input {
+    display: none;
+  }
+}
+
+.roundbutton {
+  position: absolute;
+  inset: 0 0 0 0;
+  width: 100%;
+  background-color: #33455e;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  border-radius: 3.4rem;
+  cursor: pointer;
+  
+  &:before {
+    position: absolute;
+    content: "";
+    height: .3em;
+    width: .3em;
+    height: .8em;
+    width: .8em;
+    left: .2em;
+    border-radius: 100%;
+    display: block;
+    background-color: white;
+    transition: all 0.3s;
+  }
+}
+
+input:checked + .roundbutton {
+  background-color: #FF6E48;
+}
+
+input:checked + .roundbutton:before  {
+  transform: translate(.8em, 0);
+}
+
+// toggle switch end

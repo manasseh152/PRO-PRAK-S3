@@ -1,3 +1,9 @@
+$heightNav: 60px;
+
+body {
+  margin: $heightNav 0 0 0;
+}
+
 .main-nav {
   position: fixed;
   inset: 0 0 auto 0;
@@ -19,7 +25,7 @@
   > ul {
     position: relative;
     margin: 0 auto;
-    height: 60px;
+    height: $heightNav;
     width: clamp(485px, 80vw, 1000px);
     align-items: center;
     > li:nth-child(1) {
@@ -124,5 +130,29 @@
   li:focus-within > .sub-notivication
   {
     display: flex;
+  }
+
+  .sub-settings {
+    position: absolute;
+    inset: 60px 0 auto auto;
+    height: 100px;
+    width: 180px;
+    list-style-type: none;
+    display: none;
+    flex-direction: column;
+    li {
+
+    }
+    a {
+      display: flex;
+      align-items: center;
+      font-size: .9rem;
+      font-weight: 300;
+      svg {
+        height: 20px;
+        width: 20px;
+        margin-right: .2rem;
+      }
+    }
   }
 }
