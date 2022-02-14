@@ -12,12 +12,10 @@
 </head>
 
 <body class="dark">
-  <nav class="main-nav">
     <?php include("./php/components/navbar.php"); ?>
-  </nav>
-
-  <div class="center">
   
+    <?php include("./php/components/content.php"); ?>
+  <div class="center">
   </div>
 </body>
 

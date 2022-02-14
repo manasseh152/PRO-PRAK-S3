@@ -1,3 +1,8 @@
+<?php 
+  $active = (isset($_GET["content"]))? $_GET["content"]: "";
+?> 
+
+<nav class="main-nav">
 <ul>
   <li>
     <h3 class="text-logo">Dabay</h3>
@@ -91,7 +96,7 @@
           About
         </a></li>
       <hr>
-      <li><a href="#">
+      <li><a <?php echo ($active == "register" )? "active" : "" ?>" href="index.php?content=./php/components/register">
           <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13.2222 5.27778L11.8906 6.76611L13.3828 8.44444H5.66667V10.5556H13.3828L11.8906 12.2233L13.2222 13.7222L17 9.5L13.2222 5.27778ZM1.88889 2.11111H8.5V0H1.88889C0.85 0 0 0.95 0 2.11111V16.8889C0 18.05 0.85 19 1.88889 19H8.5V16.8889H1.88889V2.11111Z" />
@@ -135,3 +140,4 @@
     </ul>
   </li>
 </ul>
+</nav>
