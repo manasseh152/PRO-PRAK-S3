@@ -4,7 +4,7 @@ const accountUl = document.getElementById('account')
 const settingsUl = document.getElementById('settings')
 const notivicationUl = document.getElementById('notivication')
 
-let theme = localStorage.getItem('theme');
+const theme = localStorage.getItem('SaveTheme');
 
 if (theme) {
   body.classList.add(theme);
@@ -15,30 +15,27 @@ if (theme) {
 themeToggle.addEventListener('click', function () {
   if (this.checked) {
     body.classList.replace('dark', 'light');
-    localStorage.setItem('theme', 'light');
+    localStorage.setItem('SaveTheme', 'light');
   } else {
     body.classList.replace('light', 'dark');
-    localStorage.setItem('theme', 'dark');
+    localStorage.setItem('SaveTheme', 'dark');
   }
 });
 
-function CloseAll() {
-  accountUl.classList.remove('active');
-  settingsUl.classList.remove('active');
-  notivicationUl.classList.remove('active');
-}
-
 function OpenSettings() {
+  accountUl.classList.remove('active');
+  notivicationUl.classList.remove('active');
   settingsUl.classList.toggle('active');
-  CloseAll();
 }
 
 function OpenAcount() {
+  settingsUl.classList.remove('active');
+  notivicationUl.classList.remove('active');
   accountUl.classList.toggle('active');
-  CloseAll();
 }
 
 function OpenNotivication() {
+  accountUl.classList.remove('active');
+  settingsUl.classList.remove('active');
   notivicationUl.classList.toggle('active');
-  CloseAll();
 }

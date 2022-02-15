@@ -10,6 +10,7 @@ html {
 body {
 	padding: 0;
 	font-family: roboto;
+	min-height: 100vh;
 }
 
 *,
@@ -30,4 +31,19 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: .2rem;
+}
+
+
+::-webkit-scrollbar {
+  width: .6em;
+  height: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-element);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-body);
+	border: 3px solid var(--bg-element);
 }

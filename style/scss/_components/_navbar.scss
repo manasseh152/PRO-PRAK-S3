@@ -29,6 +29,7 @@ body {
     position: relative;
     height: $heightNav;
     width: clamp(756px, 80vw, 1000px);
+    margin: 0 1rem;
     align-items: center;
     > li:nth-child(1) {
       margin-right: auto;
