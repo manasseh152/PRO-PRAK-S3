@@ -1,8 +1,8 @@
 const body = document.body;
+const themeToggle = document.getElementById('themeToggle')
 const accountUl = document.getElementById('account')
 const settingsUl = document.getElementById('settings')
-const themeToggle = document.getElementById('themeToggle')
-const notivication = document.getElementById('notivication')
+const notivicationUl = document.getElementById('notivication')
 
 let theme = localStorage.getItem('theme');
 
@@ -22,20 +22,23 @@ themeToggle.addEventListener('click', function () {
   }
 });
 
-notivication.addEventListener('click', function () {
-  if (this.click) {
-    accountUl.classList.remove('active');
-    settingsUl.classList.remove('active');
-  }
-});
-
-function OpenSettings() {
+function CloseAll() {
   accountUl.classList.remove('active');
-  settingsUl.classList.toggle('active');
+  settingsUl.classList.remove('active');
+  notivicationUl.classList.remove('active');
 }
 
+function OpenSettings() {
+  settingsUl.classList.toggle('active');
+  CloseAll();
+}
 
 function OpenAcount() {
   accountUl.classList.toggle('active');
-  settingsUl.classList.remove('active');
+  CloseAll();
+}
+
+function OpenNotivication() {
+  notivicationUl.classList.toggle('active');
+  CloseAll();
 }

@@ -38,13 +38,13 @@
       </a>
     </li>
     <li>
-      <a id="notivication" href="#">
+      <a href="#" onclick="OpenNotivication()">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M10.97 20.5C12.07 20.5 12.97 19.6 12.97 18.5H8.97C8.97 19.6 9.87 20.5 10.97 20.5ZM16.97 14.5V9.5C16.97 6.43 15.34 3.86 12.47 3.18V2.5C12.47 1.67 11.8 1 10.97 1C10.14 1 9.47 1.67 9.47 2.5V3.18C6.61 3.86 4.97 6.42 4.97 9.5V14.5L2.97 16.5V17.5H18.97V16.5L16.97 14.5ZM14.97 15.5H6.97V9.5C6.97 7.02 8.48 5 10.97 5C13.46 5 14.97 7.02 14.97 9.5V15.5ZM6.55 2.58L5.12 1.15C2.72 2.98 1.14 5.8 1 9H3C3.15 6.35 4.51 4.03 6.55 2.58ZM18.94 9H20.94C20.79 5.8 19.21 2.98 16.82 1.15L15.4 2.58C17.42 4.03 18.79 6.35 18.94 9Z" />
         </svg>
       </a>
-      <ul class="sub-notivication">
+      <ul id="notivication" class="sub-notivication">
         <h4>Notification</h4>
         <hr>
         <div class="user-info">
