@@ -11,12 +11,13 @@
   <script defer src="./js/app.js"></script>
 </head>
 
-<body class="dark">
+<body class="">
     <?php include("./php/components/navbar.php"); ?>
   
     <?php include("./php/components/content.php"); ?>
   <div class="center">
   </div>
+  <?php include("./php/components/footer.php"); ?>
 </body>
 
 </html>

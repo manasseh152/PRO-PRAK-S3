@@ -32,13 +32,7 @@ h6 {
   --accent: var(--color-5);
   --clr-title: var(--color-9);
   --clr-text: var(--color-8);
-  svg {
-    fill: var(--color-8);
-  }
-  .stroke {
-    fill: none;
-    stroke: var(--color-8);
-  }
+  --clr-svg: var(--color-8);
 }
 
 .dark {
@@ -47,12 +41,17 @@ h6 {
   --accent: var(--color-5);
   --clr-title: var(--color-1);
   --clr-text: var(--color-3);
-  svg {
-    fill: var(--color-3);
-  }
-  .stroke {
-    fill: none;
-    stroke: var(--color-3);
-  }
+  --clr-svg: var(--color-3);
 }
 
+svg {
+  fill: var(--clr-svg);
+  &.stroke {
+    fill: none;
+    stroke: var(--clr-svg);
+  }
+}
+a:hover .stroke,
+a:focus .stroke {
+  fill: var(--clr-svg);
+}
