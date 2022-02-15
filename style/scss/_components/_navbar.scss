@@ -126,8 +126,7 @@ body {
       }
     }
   }
-  li:active > .sub-notivication,
-  li:focus-within > .sub-notivication
+  .sub-notivication.active
   {
     display: flex;
   }
@@ -166,3 +165,11 @@ body {
     }
   }
 }
+
+// nav end
+
+// nav icons
+
+
+
+// nav icons end
