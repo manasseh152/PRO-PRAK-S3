@@ -43,15 +43,3 @@ h6 {
   --clr-text: var(--color-3);
   --clr-svg: var(--color-3);
 }
-
-svg {
-  fill: var(--clr-svg);
-  &.stroke {
-    fill: none;
-    stroke: var(--clr-svg);
-  }
-}
-a:hover .stroke,
-a:focus .stroke {
-  fill: var(--clr-svg);
-}

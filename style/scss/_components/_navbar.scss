@@ -170,6 +170,16 @@ body {
 
 // nav icons
 
-
+svg {
+  fill: var(--clr-svg);
+  &.stroke {
+    fill: none;
+    stroke: var(--clr-svg);
+  }
+}
+a:hover .stroke,
+a:focus .stroke {
+  fill: var(--clr-svg);
+}
 
 // nav icons end
