@@ -9,5 +9,5 @@
   $sql = "INSERT INTO `users` (`userid`, `user`, `username`, `password`, `email`) VALUES (NULL, '$user', '$username', '$password', '$email');";
   $result = mysqli_query($conn, $sql);
 
-  header("Location:./test.php");
+  header("Location:./.php");
 ?>
