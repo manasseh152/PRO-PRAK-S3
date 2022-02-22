@@ -6,5 +6,3 @@ function sanitize($raw_data) {
       $data = htmlspecialchars($data);
       return $data;
     }
-
-    ?>

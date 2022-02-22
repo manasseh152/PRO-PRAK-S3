@@ -1,7 +1,7 @@
 <div class="test">
 <div class="register">
     <h1>SignUp</h1>
-    <form action="./create-user.php" method="post">
+    <form action="./php/scripts/create-user.php" method="post">
       <div class="inputs">
         <input class="input" type="text" name="user" class="" value="" placeholder="Name">
 

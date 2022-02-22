@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +9,9 @@
   <link rel="shortcut icon" href="./img/svg/Nederland vlag.svg" type="image/x-icon">
   <script defer src="./js/app.js"></script>
 </head>
-
-<body class="">
+<body>
     <?php include("./php/components/navbar.php"); ?>
-  
+
     <?php include("./php/components/content.php"); ?>
   <div class="center">
   </div>
