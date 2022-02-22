@@ -1,0 +1,26 @@
+@use "./breakpoints" as brp;
+@use "sass:map";
+
+// hier staan alle mixins
+// mq-mnw / media (min-width)
+// mq-mnw vraagt om een breakpoint
+// voorbeeld @include mq-mnw(md)
+// mq-mxw / media (max-width)
+// mq-mnw vraagt om een breakpoint
+// voorbeeld @include mq-mnw(md)
+
+@mixin mq-mnw($key) {
+	$size: map-get(brp.$breakpoints, $key);
+
+	@media (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin mq-mxw($key) {
+	$size: map-get(brp.$breakpoints, $key);
+
+	@media (max-width: $size) {
+		@content;
+	}
+}

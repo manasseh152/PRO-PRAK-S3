@@ -9,7 +9,12 @@
 --color-7: #10171D;
 --color-9: #000000;
 
---animation: 200ms;
+--animation0: 0ms;
+--animation1: 200ms;
+--animation2: 200ms;
+--animation3: 200ms;
+--animation4: 200ms;
+--animation5: 200ms;
 } 
 
 body {
@@ -24,6 +29,24 @@ h4,
 h5,
 h6 {
   color: var(--clr-title);
+}
+
+.animationOFF {
+  --ani0: var(--animation0);
+  --ani1: var(--animation0);
+  --ani2: var(--animation0);
+  --ani3: var(--animation0);
+  --ani4: var(--animation0);
+  --ani5: var(--animation0);
+}
+
+.animationON {
+  --ani0: var(--animation0);
+  --ani1: var(--animation1);
+  --ani2: var(--animation2);
+  --ani3: var(--animation3);
+  --ani4: var(--animation4);
+  --ani5: var(--animation5);
 }
 
 .light {

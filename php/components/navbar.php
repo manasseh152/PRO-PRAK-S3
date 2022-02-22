@@ -7,7 +7,7 @@
     <li>
       <h3 class="text-logo">Dabay</h3>
     </li>
-    <li>
+    <li class="searchbar">
       <form action="" method="get">
         <input type="search" name="search" id="search" placeholder="Search">
       </form>
@@ -134,7 +134,7 @@
             </svg>
             Animations
             <label class="toggle">
-              <input id="animationsToggle" type="checkbox">
+              <input id="animationToggle" type="checkbox">
               <span class="roundbutton"></span>
             </label>
           </a>

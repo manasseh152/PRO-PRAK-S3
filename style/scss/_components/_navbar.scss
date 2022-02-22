@@ -161,7 +161,7 @@ body {
   }
 
   @media (max-width: 756px) {
-    li:nth-child(2) {
+    .searchbar {
       display: none;
     }
   }

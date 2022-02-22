@@ -1,15 +1,25 @@
-const body = document.body;
+const body = document.body
 const themeToggle = document.getElementById('themeToggle')
+const animationToggle = document.getElementById('animationToggle')
 const accountUl = document.getElementById('account')
 const settingsUl = document.getElementById('settings')
 const notivicationUl = document.getElementById('notivication')
 
-const theme = localStorage.getItem('SaveTheme');
+var theme = localStorage.getItem('SaveTheme')
+var animation = localStorage.getItem('SaveAniation')
 
 if (theme) {
   body.classList.add(theme);
 } else {
   body.classList.add('dark');
+  localStorage.setItem('SaveTheme', 'dark')
+}
+
+if (animation) {
+  body.classList.add(animation);
+} else {
+  body.classList.add('animationON');
+  localStorage.setItem('SaveAniation', 'animationON')
 }
 
 themeToggle.addEventListener('click', function () {
@@ -19,6 +29,16 @@ themeToggle.addEventListener('click', function () {
   } else {
     body.classList.replace('light', 'dark');
     localStorage.setItem('SaveTheme', 'dark');
+  }
+});
+
+animationToggle.addEventListener('click', function () {
+  if (this.checked) {
+    body.classList.replace('animationOFF', 'animationON');
+    localStorage.setItem('SaveAniation', 'animationON');
+  } else {
+    body.classList.replace('animationON', 'animationOFF');
+    localStorage.setItem('SaveAniation', 'animationOFF');
   }
 });
 
