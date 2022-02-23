@@ -9,12 +9,21 @@
   <link rel="shortcut icon" href="./img/svg/Nederland vlag.svg" type="image/x-icon">
   <script defer src="./js/app.js"></script>
 </head>
+<<<<<<< Updated upstream
 <body>
     <?php include("./php/components/navbar.php"); ?>
 
     <?php include("./php/components/content.php"); ?>
   <div class="center">
   </div>
+=======
+
+<body>
+  <?php include("./php/components/navbar.php"); ?>
+  
+  <?php include("./php/components/content.php"); ?>
+
+>>>>>>> Stashed changes
   <?php include("./php/components/footer.php"); ?>
 </body>
 

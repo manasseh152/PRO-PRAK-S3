@@ -10,7 +10,6 @@ html {
 body {
 	padding: 0;
 	font-family: roboto;
-	min-height: 100vh;
 }
 
 *,
@@ -19,18 +18,23 @@ body {
 	box-sizing: inherit;
 }
 
+ul {
+	list-style: none;
+}
+
 .row {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.row.center {
 	align-items: center;
-	gap: .5rem;
 }
 
 .column {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: .2rem;
 }
 
 
@@ -41,9 +45,11 @@ body {
 
 ::-webkit-scrollbar-track {
   background: var(--bg-element);
+	width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-body);
-	border: 3px solid var(--bg-element);
+  background: var(--bg-thumb);
+	border: 4px solid var(--bg-element);
+	border-radius: 100px;
 }

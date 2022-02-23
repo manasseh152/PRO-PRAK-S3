@@ -1,0 +1,5 @@
+@use './breakpoints' as brk;
+
+@function breakpoint($key) {
+  @return map-get(brk.$breakpoints , $key)
+}
