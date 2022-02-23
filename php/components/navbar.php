@@ -9,68 +9,81 @@
     <li>
       <h3 class="text-logo">Dabay</h3>
     </li>
-    <li class="searchbar">
-      <form action="" method="get">
-        <input type="search" name="search" id="search" placeholder="Search">
-      </form>
-    </li>
-    <li>
-      <a href="#">
-        <svg class="stroke" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M1.25 20.75V11.0559L11 1.72976L20.75 11.0559V20.75H15.25V15.4348C15.25 13.0876 13.3472 11.1848 11 11.1848C8.65279 11.1848 6.75 13.0876 6.75 15.4348V20.75H1.25Z"
-            stroke-width="2.5" />
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M19.5556 0H2.44444C1.08778 0 0 1.1 0 2.44444V19.5556C0 20.9 1.08778 22 2.44444 22H19.5556C20.9 22 22 20.9 22 19.5556V2.44444C22 1.1 20.9 0 19.5556 0ZM19.5556 19.5556H2.44444V2.44444H19.5556V19.5556ZM9.77778 17.1111H12.2222V12.2222H17.1111V9.77778H12.2222V4.88889H9.77778V9.77778H4.88889V12.2222H9.77778V17.1111Z" />
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M11 0C4.928 0 0 4.928 0 11C0 17.072 4.928 22 11 22C17.072 22 22 17.072 22 11C22 4.928 17.072 0 11 0ZM11 19.8C6.149 19.8 2.2 15.851 2.2 11C2.2 6.149 6.149 2.2 11 2.2C15.851 2.2 19.8 6.149 19.8 11C19.8 15.851 15.851 19.8 11 19.8ZM4.95 17.05L13.211 13.211L17.05 4.95L8.789 8.789L4.95 17.05ZM11 9.79C11.671 9.79 12.21 10.329 12.21 11C12.21 11.671 11.671 12.21 11 12.21C10.329 12.21 9.79 11.671 9.79 11C9.79 10.329 10.329 9.79 11 9.79Z" />
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="#" onclick="OpenNotivication()">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M10.97 20.5C12.07 20.5 12.97 19.6 12.97 18.5H8.97C8.97 19.6 9.87 20.5 10.97 20.5ZM16.97 14.5V9.5C16.97 6.43 15.34 3.86 12.47 3.18V2.5C12.47 1.67 11.8 1 10.97 1C10.14 1 9.47 1.67 9.47 2.5V3.18C6.61 3.86 4.97 6.42 4.97 9.5V14.5L2.97 16.5V17.5H18.97V16.5L16.97 14.5ZM14.97 15.5H6.97V9.5C6.97 7.02 8.48 5 10.97 5C13.46 5 14.97 7.02 14.97 9.5V15.5ZM6.55 2.58L5.12 1.15C2.72 2.98 1.14 5.8 1 9H3C3.15 6.35 4.51 4.03 6.55 2.58ZM18.94 9H20.94C20.79 5.8 19.21 2.98 16.82 1.15L15.4 2.58C17.42 4.03 18.79 6.35 18.94 9Z" />
-        </svg>
-      </a>
-      <ul id="notivication" class="sub-notivication">
-        <h4>Notification</h4>
-        <hr>
-        <div class="user-info">
-          <img src="./img/svg/Account icon.svg" alt="Accounticon">
-          <h5>Username</h5>
-          <p>upvoted your post</p>
-        </div>
-        <div class="user-info">
-          <img src="./img/svg/Account icon.svg" alt="Accounticon">
-          <h5>Username</h5>
-          <p>upvoted your post</p>
-        </div>
-        <div class="user-info">
-          <img src="./img/svg/Account icon.svg" alt="Accounticon">
-          <h5>Username</h5>
-          <p>upvoted your post</p>
-        </div>
-        <div class="user-info">
-          <img src="./img/svg/Account icon.svg" alt="Accounticon">
-          <h5>Username</h5>
-          <p>upvoted your post</p>
-        </div>
-      </ul>
-    </li>
+    <?php
+          if (isset($_SESSION["userID"])) {
+            echo 
+            '
+              <li class="searchbar">
+                <form action="" method="get">
+                  <input type="search" name="search" id="search" placeholder="Search">
+                </form>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="stroke" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.25 20.75V11.0559L11 1.72976L20.75 11.0559V20.75H15.25V15.4348C15.25 13.0876 13.3472 11.1848 11 11.1848C8.65279 11.1848 6.75 13.0876 6.75 15.4348V20.75H1.25Z"
+                      stroke-width="2.5" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M19.5556 0H2.44444C1.08778 0 0 1.1 0 2.44444V19.5556C0 20.9 1.08778 22 2.44444 22H19.5556C20.9 22 22 20.9 22 19.5556V2.44444C22 1.1 20.9 0 19.5556 0ZM19.5556 19.5556H2.44444V2.44444H19.5556V19.5556ZM9.77778 17.1111H12.2222V12.2222H17.1111V9.77778H12.2222V4.88889H9.77778V9.77778H4.88889V12.2222H9.77778V17.1111Z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11 0C4.928 0 0 4.928 0 11C0 17.072 4.928 22 11 22C17.072 22 22 17.072 22 11C22 4.928 17.072 0 11 0ZM11 19.8C6.149 19.8 2.2 15.851 2.2 11C2.2 6.149 6.149 2.2 11 2.2C15.851 2.2 19.8 6.149 19.8 11C19.8 15.851 15.851 19.8 11 19.8ZM4.95 17.05L13.211 13.211L17.05 4.95L8.789 8.789L4.95 17.05ZM11 9.79C11.671 9.79 12.21 10.329 12.21 11C12.21 11.671 11.671 12.21 11 12.21C10.329 12.21 9.79 11.671 9.79 11C9.79 10.329 10.329 9.79 11 9.79Z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+              <a href="#" onclick="OpenNotivication()">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.97 20.5C12.07 20.5 12.97 19.6 12.97 18.5H8.97C8.97 19.6 9.87 20.5 10.97 20.5ZM16.97 14.5V9.5C16.97 6.43 15.34 3.86 12.47 3.18V2.5C12.47 1.67 11.8 1 10.97 1C10.14 1 9.47 1.67 9.47 2.5V3.18C6.61 3.86 4.97 6.42 4.97 9.5V14.5L2.97 16.5V17.5H18.97V16.5L16.97 14.5ZM14.97 15.5H6.97V9.5C6.97 7.02 8.48 5 10.97 5C13.46 5 14.97 7.02 14.97 9.5V15.5ZM6.55 2.58L5.12 1.15C2.72 2.98 1.14 5.8 1 9H3C3.15 6.35 4.51 4.03 6.55 2.58ZM18.94 9H20.94C20.79 5.8 19.21 2.98 16.82 1.15L15.4 2.58C17.42 4.03 18.79 6.35 18.94 9Z" />
+                </svg>
+              </a>
+              <ul id="notivication" class="sub-notivication">
+                <h4>Notification</h4>
+                <hr>
+                <div class="user-info">
+                  <img src="./img/svg/Account icon.svg" alt="Accounticon">
+                  <h5>Username</h5>
+                  <p>upvoted your post</p>
+                </div>
+                <div class="user-info">
+                  <img src="./img/svg/Account icon.svg" alt="Accounticon">
+                  <h5>Username</h5>
+                  <p>upvoted your post</p>
+                </div>
+                <div class="user-info">
+                  <img src="./img/svg/Account icon.svg" alt="Accounticon">
+                  <h5>Username</h5>
+                  <p>upvoted your post</p>
+                </div>
+                <div class="user-info">
+                  <img src="./img/svg/Account icon.svg" alt="Accounticon">
+                  <h5>Username</h5>
+                  <p>upvoted your post</p>
+                </div>
+              </ul>
+            </li>
+            ';
+          } else {
+            echo 
+            '
+            <ul id="notivication" class="sub-notivication">
+            </ul>
+            ';
+          }
+        ?>
     <li>
       <a href="#" onclick="OpenAcount()">
         <img src="./img/svg/Account icon.svg" alt="Account">
