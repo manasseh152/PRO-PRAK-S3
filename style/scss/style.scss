@@ -12,6 +12,15 @@ body {
 	font-family: roboto;
 }
 
+main {
+	min-height: calc(100vh - 60px);
+}
+
+button {
+	background: none;
+	border: none;
+}
+
 *,
 *::after,
 *::before {

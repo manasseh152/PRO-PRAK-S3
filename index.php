@@ -13,7 +13,9 @@
 <body>
   <?php include("./php/components/navbar.php"); ?>
   
-  <?php include("./php/components/content.php"); ?>
+  <main>
+    <?php include("./php/components/content.php"); ?>
+  </main>
 
   <?php include("./php/components/footer.php"); ?>
 </body>

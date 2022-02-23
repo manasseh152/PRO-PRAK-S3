@@ -85,9 +85,9 @@
           }
         ?>
     <li>
-      <a href="#" onclick="OpenAcount()">
+      <button onclick="OpenAcount()">
         <img src="./img/svg/Account icon.svg" alt="Account">
-      </a>
+      </button>
       <ul id="account" class="sub-account">
         <li>
           <a href="#">
