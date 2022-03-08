@@ -1,0 +1,17 @@
+.post.create {
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+  input,
+  textarea {
+    padding: 0 .2rem;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--clr-text);
+  }
+  .post-title {
+    font-size: 1.25rem;
+  }
+}

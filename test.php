@@ -18,6 +18,8 @@
   <script defer src="./js/app.js"></script>
 </head>
 <body>
+
+
   <div class="post">
     <div class="post-header">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,11 +36,15 @@
     </div>
     <div class="post-body">
       <h3>Lorem, ipsum dolor.</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, nisi inventore? Ab aut quidem rerum reiciendis impedit officia pariatur hic non fugiat quis doloribus optio iusto porro sint harum sapiente quisquam est omnis, qui laborum rem, dolores odio soluta commodi.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus officiis quam dolorem voluptate, sit deserunt labore totam, dolorum aliquam, repudiandae ratione debitis? Ut recusandae magnam eveniet accusamus, doloremque nihil eius eos nostrum unde ducimus est illum. Officia, maxime. Dicta, et.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illo aliquam consequatur saepe quis ipsum nam quidem dolore praesentium, dolor eum repellendus assumenda sapiente delectus, aut quae dicta unde voluptate veritatis, quaerat enim? Cumque sunt ad cum dignissimos voluptate numquam corrupti doloribus possimus, praesentium obcaecati ab ea reiciendis consequuntur adipisci laborum temporibus, sequi magnam ipsa! Quibusdam molestiae numquam sequi quaerat?</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, nisi inventore? Ab aut quidem rerum reiciendis impedit officia pariatur hic non fugiat quis doloribus optio iusto porro sint harum sapiente quisquam est omnis, qui laborum rem, dolores odio soluta commodi
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus officiis quam dolorem voluptate, sit deserunt labore totam, dolorum aliquam, repudiandae ratione debitis? Ut recusandae magnam eveniet accusamus, doloremque nihil eius eos nostrum unde ducimus est illuficia,
+        
+        maxime. Dicta, et Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illo aliquam consequatur saepe quis ipsum nam quidem dolore praesentium, dolor eum repellendus assumenda sapiente delectus, aut quae dicta unde voluptate veritatis, quaerat enim? Cumque sunt ad cum 
+        dignissimos voluptate numquam corrupti doloribus possimus, praesentium obcaecati ab ea reiciendis consequuntur adipisci laborum temporibus, sequi magnam ipsa! Quibusdam molestiae numquam sequi quaerat?
+      </p>
     </div>
-    <div class="post-comments column">
+    <div class="post-comments">
       <div>
         <a href="">
           <svg class="upvote-svg" width="22" height="20" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg">
@@ -69,5 +75,7 @@
       </form>
     </div>
   </div>
+
+
 </body>
 </html>
