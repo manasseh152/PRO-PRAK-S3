@@ -19,7 +19,7 @@
         header("Location: index.php?content=php/components/login");
       } else {
         $_SESSION["userID"] = $record["userID"];
-        header("Location: index.php?content=home");
+        header("Location: index.php?content=php/content/home");
       }
     }
   }

@@ -60,7 +60,12 @@
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
-      <li><a href="#">Sign up</a></li>
+      <?php 
+      if(isset($_SESSION["userID"])){
+      } else {
+        echo '<a href="index.php?content=php/components/register">Login</a>';
+      }
+    ?>
     </ul>
   </div>
   <hr>
@@ -71,8 +76,12 @@
     <div>
       copyright
     </div>
-    <button class="btn-1">
-      button
-    </button>
+    <?php 
+      if(isset($_SESSION["userID"])){
+        echo '<a class="btn-1" href="index.php?content=php/components/register">Open Account</a>';
+      } else {
+        echo '<a class="btn-1" href="index.php?content=php/components/register">Sign Up</a>';
+      }
+    ?>
   </div>
 </footer>

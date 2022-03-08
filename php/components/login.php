@@ -1,6 +1,6 @@
 <div class="test">
 <div class="register">
-    <h1>SignIn</h1>
+    <h1>Sign In</h1>
     <form action="index.php?content=/php/scripts/login-script" method="post">
       <div class="inputs">
         <input class="input" type="text" name="username" class="" value="" placeholder="Username">
