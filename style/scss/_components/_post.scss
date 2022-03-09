@@ -1,4 +1,14 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
 .post {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
   width: clamp(200px, 60vw, 650px);
 
   * {

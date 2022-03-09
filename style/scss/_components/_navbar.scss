@@ -5,6 +5,7 @@ body {
 }
 
 .main-nav {
+  z-index: 1;
   position: fixed;
   inset: 0 0 auto 0;
   display: flex;
