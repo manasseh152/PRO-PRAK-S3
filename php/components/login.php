@@ -1,5 +1,5 @@
 <div class="test">
-<div class="register">
+  <div class="register">
     <h1>Sign In</h1>
     <form action="index.php?content=/php/scripts/login-script" method="post">
       <div class="inputs">
@@ -13,4 +13,4 @@
       <p>Stay as <a href="index.php?content=php/content/home">Guest</a></p>
     </div>
   </div>
-  </div>
+</div>

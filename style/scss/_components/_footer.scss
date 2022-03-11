@@ -1,16 +1,12 @@
 footer {
-  padding: 2vw;
+  padding-top: 1rem;
   background-color: var(--bg-element);
   color: var(--clr-text);
   * {
     margin: 0;
     padding: 0;
   }
-  > * {
-    width: clamp(300px, 80vw, 1000px);
-    margin: 0 auto;
-  }
-  > div {
+  > * > div {
     justify-content: space-between;
   }
   hr {

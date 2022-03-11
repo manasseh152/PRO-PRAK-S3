@@ -9,14 +9,15 @@ html {
 
 body {
 	padding: 0;
+	margin: 0;
 	font-family: roboto;
 }
 
 main {
+	grid-area: m;
 	min-height: calc(100vh - 60px);
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
 }
 
 button {
@@ -64,4 +65,53 @@ ul {
   background: var(--bg-thumb);
 	border: 4px solid var(--bg-element);
 	border-radius: 100px;
+}
+
+header,
+footer {
+    display: grid;
+    grid-template-columns:
+        minmax(0.5rem, 1fr)
+        minmax(1px, 600px)
+        minmax(0.5rem, 1fr);
+}
+
+body {
+	display: grid;
+	grid-template-columns:
+			minmax(0.1rem, 1fr)
+			minmax(1px, 600px)
+			minmax(0.1rem, 1fr);
+	position: relative;
+	grid-template-areas:
+			"h h h"
+			". m ."
+			"f f f";
+	gap: 1rem;
+	&.big {
+		grid-template-columns:
+		minmax(0.1rem, 1fr)
+		minmax(1px, 800px)
+		minmax(0.1rem, 1fr);
+	}
+}
+
+header,
+footer {
+	grid-template-areas: ". c .";
+}
+
+header {
+	grid-area: h;
+	width: 100%;
+	position: fixed;
+}
+
+footer {
+	grid-area: f;
+}
+
+nav,
+footer > * {
+	grid-area: c;
 }

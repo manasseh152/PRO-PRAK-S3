@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,9 @@
   <script defer src="./js/app.js"></script>
 </head>
 
-<body>
+<body class="">
   <?php include("./php/components/navbar.php"); ?>
-  
+
   <main>
     <?php include("./php/components/content.php"); ?>
   </main>
