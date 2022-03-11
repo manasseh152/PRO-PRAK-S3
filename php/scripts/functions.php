@@ -32,7 +32,7 @@ function sanitize($raw_data) {
       $result = mysqli_query($conn, $sql);
       $elementID = 1;
       while ($record = mysqli_fetch_assoc($result)) {
-            echo'<div class="post">
+            echo'<div id='. $elementID .' class="post">
             <div class="post-header">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="24" height="24" rx="12" fill="#D7D7D7"/>
@@ -88,9 +88,11 @@ function sanitize($raw_data) {
               </svg>
               <input class="" type="text" name="commentText" placeholder="Comment here....">
               <input type="hidden" name="postID" value='. $record["postID"] .'>
+              <input type="hidden" name="elementID" value='. $elementID .'>
             </form>
           </div>
         </div>';
+        $elementID++;
         }
     }
 
