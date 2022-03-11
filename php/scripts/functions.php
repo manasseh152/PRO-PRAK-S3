@@ -10,10 +10,10 @@ function sanitize($raw_data) {
 
 
     function is_authorized($userroles) {
-      if (!isset($_SESSION["id"])) {
-        return header("Location: ./index.php?content=message&alert=auth-error");
+      if (!isset($_SESSION["userID"])) {
+        return header("Location: index.php");
       } elseif (!in_array($_SESSION["userrole"], $userroles)) {
-        return header("Location: ./index.php?content=message&alert=auth-error-userrole");
+        return header("Location: index.php");
       } else {
         return true;
       }
