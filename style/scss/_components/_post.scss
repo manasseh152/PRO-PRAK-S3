@@ -6,13 +6,10 @@
 }
 
 .post {
-<<<<<<< Updated upstream
   background-color: var(--bg-element);
   display: flex;
   flex-direction: column;
-  width: clamp(200px, 60vw, 650px);
-=======
->>>>>>> Stashed changes
+  width: 100%;
 
   * {
     margin: 0;
