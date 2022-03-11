@@ -30,6 +30,7 @@ function sanitize($raw_data) {
     function showPost($sql) {
       global $conn;
       $result = mysqli_query($conn, $sql);
+      $elementID = 1;
       while ($record = mysqli_fetch_assoc($result)) {
             echo'<div class="post">
             <div class="post-header">
@@ -79,13 +80,14 @@ function sanitize($raw_data) {
               }
               echo'
             <a class="btmborder" href="#"><strong>more</strong></a>
-            <form class="row" action="">
+            <form class="row" method="POST" action="index.php?content=php/scripts/create-comment">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="24" height="24" rx="12" fill="#D7D7D7"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.9959 21.7509C17.0264 23.1664 14.6105 24 12 24C8.93576 24 6.13978 22.8515 4.01904 20.9614C4.29511 17.0707 7.53896 14 11.5 14C15.6421 14 19 17.3579 19 21.5C19 21.5839 18.9986 21.6676 18.9959 21.7509Z" fill="#BFBCBC"/>
                 <rect x="7" y="6" width="9" height="9" rx="4.5" fill="#BDBCBC"/>
               </svg>
-              <input class="comment-input" type="text" placeholder="Comment here....">
+              <input class="" type="text" name="commentText" placeholder="Comment here....">
+              <input type="hidden" name="postID" value='. $record["postID"] .'>
             </form>
           </div>
         </div>';
@@ -102,4 +104,13 @@ function sanitize($raw_data) {
 
 
 
+// if (!isset($_SESSION["userID"])) {
+//   // gebruiker is niet ingelogd
+// } elseif($_SESSION["userID"] = $username) {
+//   // gebruiker is eigenaar post
+// } elseif($_SESSION["userrole"] = 'admin' || 'root') {
+//   // gebruiker is admin of root
+// } else {
+//   // report knop
+// }
 
