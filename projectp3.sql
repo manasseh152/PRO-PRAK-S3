@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 09 mrt 2022 om 16:07
--- Serverversie: 5.7.36
+-- Gegenereerd op: 11 mrt 2022 om 15:03
+-- Serverversie: 5.7.31
 -- PHP-versie: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`commentID`),
   KEY `postID` (`postID`),
   KEY `userID` (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `comments`
@@ -46,7 +46,18 @@ CREATE TABLE IF NOT EXISTS `comments` (
 
 INSERT INTO `comments` (`commentID`, `postID`, `userID`, `comment`) VALUES
 (2, 1, 41, 'hehe boyyyyy'),
-(3, 1, 42, 'Zo zo ik heb het werkende');
+(3, 1, 42, 'Zo zo ik heb het werkende'),
+(4, 1, 42, 'hgjjhghjghhghjgjhjh'),
+(6, 1, 41, 'test'),
+(7, 1, 41, 'test'),
+(8, 1, 41, 'test'),
+(9, 1, 42, 'hey'),
+(10, 1, 42, 'hey'),
+(11, 1, 42, 'dit is een test'),
+(12, 1, 42, 'lol'),
+(13, 16, 42, 'sgsgssdgs'),
+(14, 23, 42, 'elle'),
+(15, 18, 42, 'ello');
 
 -- --------------------------------------------------------
 
@@ -59,13 +70,13 @@ CREATE TABLE IF NOT EXISTS `post` (
   `postID` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
-  `img` varchar(1000) NOT NULL,
+  `img` varchar(1000) DEFAULT NULL,
   `text` varchar(1000) NOT NULL,
-  `upvote` int(255) NOT NULL,
+  `upvote` int(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`postID`),
   KEY `upvote` (`upvote`),
   KEY `userID` (`userID`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `post`
@@ -81,29 +92,10 @@ INSERT INTO `post` (`postID`, `userID`, `title`, `img`, `text`, `upvote`) VALUES
 (20, 42, 'Test', 'test', 'test', 5),
 (21, 42, 'Test', 'test', 'test', 5),
 (22, 42, 'Test', 'test', 'test', 5),
-(23, 42, 'Test', 'test', 'test', 5);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `userrole`
---
-
-DROP TABLE IF EXISTS `userrole`;
-CREATE TABLE IF NOT EXISTS `userrole` (
-  `roleID` int(11) NOT NULL,
-  `roleName` varchar(30) NOT NULL,
-  PRIMARY KEY (`roleID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Gegevens worden geëxporteerd voor tabel `userrole`
---
-
-INSERT INTO `userrole` (`roleID`, `roleName`) VALUES
-(1, 'user'),
-(2, 'admin'),
-(3, 'root');
+(23, 42, 'Test', 'test', 'test', 5),
+(24, 42, 'a', NULL, 'a', 0),
+(25, 42, '', NULL, '', 0),
+(26, 42, 'DIt is de nieuwste post', NULL, 'even kijken of dit erkt', 0);
 
 -- --------------------------------------------------------
 
@@ -118,20 +110,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(20) NOT NULL,
   `password` varchar(128) NOT NULL,
   `email` varchar(300) NOT NULL,
-  `userroleID` int(11) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`userID`),
-  KEY `userroleID` (`userroleID`)
+  `userrole` enum('root','admin','moderator','user') NOT NULL DEFAULT 'user',
+  PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
-INSERT INTO `users` (`userID`, `name`, `username`, `password`, `email`, `userroleID`) VALUES
-(39, '123', '123', '$2y$10$uZ3Xf4LEMMBBDKI5XhPo.uZrGEM8N9fHbwj/YRZS9C7lJpjbVohVa', '123@123', 1),
-(40, '123', '123', '$2y$10$KsJbNUA9jeeIHASupMuzOOaKf78PYIMyh63ku8pWEj/OIRSR0WieC', 'a@a', 1),
-(41, 'Maurice', 'mouse', '$2y$10$9DTsttT1SL3SalGkjrFrLebfc0EQwHwO7W8zUnSU8vcNNY.dmP7b6', 'mauricevanwijk@gmail.com', 1),
-(42, 'hallo', 'hallo', '$2y$10$8gBbHsNVDodNfk5UW0tb.el0lVJrSzcywTPCrTJ3.EXX/HTLS88Iu', 'hallo@hallo', 1);
+INSERT INTO `users` (`userID`, `name`, `username`, `password`, `email`, `userrole`) VALUES
+(39, '123', '123', '$2y$10$uZ3Xf4LEMMBBDKI5XhPo.uZrGEM8N9fHbwj/YRZS9C7lJpjbVohVa', '123@123', 'root'),
+(40, '123', '123', '$2y$10$KsJbNUA9jeeIHASupMuzOOaKf78PYIMyh63ku8pWEj/OIRSR0WieC', 'a@a', 'root'),
+(41, 'Maurice', 'mouse', '$2y$10$9DTsttT1SL3SalGkjrFrLebfc0EQwHwO7W8zUnSU8vcNNY.dmP7b6', 'mauricevanwijk@gmail.com', 'root'),
+(42, 'hallo', 'hallo', '$2y$10$8gBbHsNVDodNfk5UW0tb.el0lVJrSzcywTPCrTJ3.EXX/HTLS88Iu', 'hallo@hallo', 'root');
 
 --
 -- Beperkingen voor geëxporteerde tabellen
@@ -149,12 +140,6 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `fk_userID` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Beperkingen voor tabel `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `fk_userroleID` FOREIGN KEY (`userroleID`) REFERENCES `userrole` (`roleID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
