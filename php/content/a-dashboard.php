@@ -23,7 +23,7 @@
   //showPost($reportedPost);
 
   // percentage reported post van total post
-  $percentage = $totalPost["totalPost"] / $totalReports["totalReports"];
+  $percentage = $totalReports["totalReports"] / $totalPost["totalPost"] * 100;
 ?>
 <div>
   <p>Total posts: <?= $totalPost["totalPost"]; ?></p>
