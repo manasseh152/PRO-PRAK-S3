@@ -15,13 +15,13 @@
   `username`,
   `password`,
   `email`,
-  `userroleID`)
+  `userrole`)
 VALUES                  (NULL,
   '$user',
   '$username',
   '$pwh',
   '$email',
-  1)";
+  'user')";
 
   $result = mysqli_query($conn, $sql);
 

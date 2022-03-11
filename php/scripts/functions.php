@@ -1,5 +1,5 @@
 <?php
-include('php/scripts/connect-db.php');
+include('connect-db.php');
 function sanitize($raw_data) {
 
       global $conn;
