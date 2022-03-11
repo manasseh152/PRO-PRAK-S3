@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 11 mrt 2022 om 15:03
--- Serverversie: 5.7.31
+-- Gegenereerd op: 11 mrt 2022 om 18:46
+-- Serverversie: 5.7.36
 -- PHP-versie: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -38,26 +38,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`commentID`),
   KEY `postID` (`postID`),
   KEY `userID` (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
-
---
--- Gegevens worden geëxporteerd voor tabel `comments`
---
-
-INSERT INTO `comments` (`commentID`, `postID`, `userID`, `comment`) VALUES
-(2, 1, 41, 'hehe boyyyyy'),
-(3, 1, 42, 'Zo zo ik heb het werkende'),
-(4, 1, 42, 'hgjjhghjghhghjgjhjh'),
-(6, 1, 41, 'test'),
-(7, 1, 41, 'test'),
-(8, 1, 41, 'test'),
-(9, 1, 42, 'hey'),
-(10, 1, 42, 'hey'),
-(11, 1, 42, 'dit is een test'),
-(12, 1, 42, 'lol'),
-(13, 16, 42, 'sgsgssdgs'),
-(14, 23, 42, 'elle'),
-(15, 18, 42, 'ello');
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -73,29 +54,40 @@ CREATE TABLE IF NOT EXISTS `post` (
   `img` varchar(1000) DEFAULT NULL,
   `text` varchar(1000) NOT NULL,
   `upvote` int(255) NOT NULL DEFAULT '0',
+  `report` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`postID`),
   KEY `upvote` (`upvote`),
   KEY `userID` (`userID`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `post`
 --
 
-INSERT INTO `post` (`postID`, `userID`, `title`, `img`, `text`, `upvote`) VALUES
-(1, 42, 'Hello me friend', 'test', 'test', 5),
-(15, 42, 'Test', 'test', 'test', 5),
-(16, 42, 'Test', 'test', 'test', 5),
-(17, 42, 'Test', 'test', 'test', 5),
-(18, 42, 'Test', 'test', 'test', 5),
-(19, 42, 'Test', 'test', 'test', 5),
-(20, 42, 'Test', 'test', 'test', 5),
-(21, 42, 'Test', 'test', 'test', 5),
-(22, 42, 'Test', 'test', 'test', 5),
-(23, 42, 'Test', 'test', 'test', 5),
-(24, 42, 'a', NULL, 'a', 0),
-(25, 42, '', NULL, '', 0),
-(26, 42, 'DIt is de nieuwste post', NULL, 'even kijken of dit erkt', 0);
+INSERT INTO `post` (`postID`, `userID`, `title`, `img`, `text`, `upvote`, `report`) VALUES
+(37, 49, 'Dit is een test', NULL, 'wat een test', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `userrole`
+--
+
+DROP TABLE IF EXISTS `userrole`;
+CREATE TABLE IF NOT EXISTS `userrole` (
+  `roleID` int(11) NOT NULL,
+  `roleName` varchar(30) NOT NULL,
+  PRIMARY KEY (`roleID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `userrole`
+--
+
+INSERT INTO `userrole` (`roleID`, `roleName`) VALUES
+(1, 'user'),
+(2, 'admin'),
+(3, 'root');
 
 -- --------------------------------------------------------
 
@@ -112,17 +104,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(300) NOT NULL,
   `userrole` enum('root','admin','moderator','user') NOT NULL DEFAULT 'user',
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
 INSERT INTO `users` (`userID`, `name`, `username`, `password`, `email`, `userrole`) VALUES
-(39, '123', '123', '$2y$10$uZ3Xf4LEMMBBDKI5XhPo.uZrGEM8N9fHbwj/YRZS9C7lJpjbVohVa', '123@123', 'root'),
-(40, '123', '123', '$2y$10$KsJbNUA9jeeIHASupMuzOOaKf78PYIMyh63ku8pWEj/OIRSR0WieC', 'a@a', 'root'),
-(41, 'Maurice', 'mouse', '$2y$10$9DTsttT1SL3SalGkjrFrLebfc0EQwHwO7W8zUnSU8vcNNY.dmP7b6', 'mauricevanwijk@gmail.com', 'root'),
-(42, 'hallo', 'hallo', '$2y$10$8gBbHsNVDodNfk5UW0tb.el0lVJrSzcywTPCrTJ3.EXX/HTLS88Iu', 'hallo@hallo', 'root');
+(48, 'user', 'user', '$2y$10$8Th/MrdBNodxjtrXZ6gq7.HeSWCy.5N4G3NF0Jvbkbw/g3j3X9Og2', 'user@user', 'user'),
+(49, 'admin', 'admin', '$2y$10$viGO72wGAKmLaesav5Zk8.tiUxOoN54QomGmPgYLt83rGjT2t9aLu', 'admin@admin', 'admin'),
+(50, 'moderator', 'moderator', '$2y$10$CxoLCSCraXXveZnBD.yyGeHq/spczKBgTk/mYASAo/sw6T3rWY2zi', 'moderator@moderator', 'moderator'),
+(51, 'root', 'root', '$2y$10$9L6RSTeqcHG5kZF3rgyxaOIisdLt2xgdOM3Yit04SzlTlP1sA/hCG', 'root@root', 'root');
 
 --
 -- Beperkingen voor geëxporteerde tabellen
