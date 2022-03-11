@@ -4,14 +4,15 @@ body {
   margin: $heightNav 0 0 0;
 }
 
-.main-nav {
-  z-index: 1;
-  position: fixed;
-  inset: 0 0 auto 0;
-  display: flex;
-  justify-content: center;
+header {
   background-color: var(--bg-element);
   box-shadow: var(--clr-text)    0px 0px 2px 0px;
+}
+
+.main-nav {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .main-nav {
