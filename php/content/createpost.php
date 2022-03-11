@@ -1,6 +1,6 @@
 <?php
   include("php/scripts/functions.php");
-  //is_authorized(['user', 'moderator', 'admin', 'root']);
+  is_authorized(['user', 'moderator', 'admin', 'root']);
 ?>
   
 <div class="post">
