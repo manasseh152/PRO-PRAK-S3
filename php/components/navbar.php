@@ -19,7 +19,7 @@
                 </form>
               </li>
               <li>
-                <a href="#">
+                <a href="index.php?content=php/content/home">
                   <svg class="stroke" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M1.25 20.75V11.0559L11 1.72976L20.75 11.0559V20.75H15.25V15.4348C15.25 13.0876 13.3472 11.1848 11 11.1848C8.65279 11.1848 6.75 13.0876 6.75 15.4348V20.75H1.25Z"
