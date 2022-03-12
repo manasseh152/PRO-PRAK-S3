@@ -1,5 +1,5 @@
 <?php
-include('php/scripts/connect-db.php');
+include('connect-db.php');
 function sanitize($raw_data) {
 
       global $conn;
@@ -8,6 +8,11 @@ function sanitize($raw_data) {
       return $data;
     }
 
+    function runStatement($sql) {
+      global $conn;
+      $result = mysqli_query($conn, $sql);
+      return $result;
+    }
 
     function is_authorized($userroles) {
       if (!isset($_SESSION["userID"])) {
