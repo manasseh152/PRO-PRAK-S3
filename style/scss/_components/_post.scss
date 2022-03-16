@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 1rem 0;
 }
 
 .post {
@@ -10,13 +9,29 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  padding: .3rem 0;
+  gap: .5rem;
   * {
     margin: 0;
     padding: 0;
   }
   > div {
-    padding: .5rem .9rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+.post.create {
+  input,
+  textarea {
+    width: 100%;
+    background: none;
+    color: var(--clr-text);
+    outline: none;
+    border: none;
+    resize: none;
+  }
+  textarea {
+    height: fit-content;
   }
 }
 
@@ -31,16 +46,42 @@
   p {
     font-weight: 600;
   }
+  box-shadow: 0 1px 0 0 var(--clr-text);
 }
+
+.post-body {
+  aspect-ratio: 1 / .5;
+  box-shadow: 0 1px 0 0 var(--clr-text);
+}
+
+.post-comments {
+  form {
+    display: flex;
+    gap: .3rem;
+    input {
+      background: none;
+      color: var(--clr-text);
+      outline: none;
+      border: none;
+      width: calc(100% - .3rem - 24px);
+    }
+  }
+}
+
+
 
 // Icons
 .upvote-svg, .comment-svg {
   stroke: var(--clr-svg);
   fill: none;
-  &:hover,
-  &:focus {
+  &:not(.pressed):hover,
+  &:not(.pressed):focus {
     fill: var(--clr-svg);
     opacity: .8;
+  }
+  &.pressed {
+    stroke: none;
+    fill: var(--clr-title);
   }
 }
 

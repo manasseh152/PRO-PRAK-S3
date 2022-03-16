@@ -16,7 +16,7 @@ body {
 main {
 	padding-top: 60px;
 	grid-area: m;
-	min-height: calc(100vh - 60px);
+	min-height: calc(100vh - 45px);
 	display: flex;
 	flex-direction: column;
 }
@@ -73,7 +73,7 @@ footer {
     display: grid;
     grid-template-columns:
         minmax(0.5rem, 1fr)
-        minmax(1px, 600px)
+        minmax(1px, 700px)
         minmax(0.5rem, 1fr);
 				grid-template-areas: ". c .";
 }
