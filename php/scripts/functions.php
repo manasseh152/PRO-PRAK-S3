@@ -70,7 +70,7 @@ function sanitize($raw_data) {
                 </svg>
               </a>
             </div>
-            <p><?php echo $upvotes ?> likes</p>
+            <p>upvotes '. $record["upvote"] .'</p>
             ';
               $comments = getComments($record['postID']);
               while ($comment = mysqli_fetch_assoc($comments)) {
