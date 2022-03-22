@@ -5,6 +5,21 @@ $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER
 ?>
 
 <div class="posts">
-  <?php 
-    showPost($sql);
-  ?>
+
+  <div class="page-label">
+    <h2>Discover</h2>
+
+    <div class="dropdown">
+      sort by
+      <ul>
+        <li><button>m</button></li>
+        <li><button>m</button></li>
+        <li><button>l</button></li>
+        <li><button>l</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <?php showPost($sql); ?>
+
+</div>
