@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 11 mrt 2022 om 18:46
--- Serverversie: 5.7.36
+-- Gegenereerd op: 22 mrt 2022 om 13:56
+-- Serverversie: 5.7.31
 -- PHP-versie: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -38,7 +38,22 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`commentID`),
   KEY `postID` (`postID`),
   KEY `userID` (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `comments`
+--
+
+INSERT INTO `comments` (`commentID`, `postID`, `userID`, `comment`) VALUES
+(1, 39, 49, 'ello'),
+(2, 39, 49, 'ellol'),
+(3, 39, 49, 'wait whaaaaaa'),
+(4, 40, 52, 'wat lekker zech'),
+(5, 40, 49, 'ghgggdfgdsdg'),
+(6, 40, 49, 'dgdfgdfgdfgdf'),
+(7, 40, 49, 'dfgdfgdfggsdfgaet'),
+(8, 40, 49, 'ohhhhhhhhhhhhhhhhhhhh'),
+(9, 40, 49, 'ooohhhhhhhhhhhhhhhhhhhhhhhhhhh');
 
 -- --------------------------------------------------------
 
@@ -55,17 +70,21 @@ CREATE TABLE IF NOT EXISTS `post` (
   `text` varchar(1000) NOT NULL,
   `upvote` int(255) NOT NULL DEFAULT '0',
   `report` tinyint(1) NOT NULL DEFAULT '0',
+  `hidden` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`postID`),
   KEY `upvote` (`upvote`),
   KEY `userID` (`userID`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `post`
 --
 
-INSERT INTO `post` (`postID`, `userID`, `title`, `img`, `text`, `upvote`, `report`) VALUES
-(37, 49, 'Dit is een test', NULL, 'wat een test', 0, 0);
+INSERT INTO `post` (`postID`, `userID`, `title`, `img`, `text`, `upvote`, `report`, `hidden`) VALUES
+(37, 49, 'Dit is een test', NULL, 'wat een test', 6, 0, 0),
+(39, 49, 'Hallo dit is een test1', '1', 'even kijken of het zo wel werkt ik hoop het namelijk wel even kijken of het zo wel werkt ik hoop het namelijk wel even kijken of het zo wel werkt ik hoop het namelijk wel even kijken of het zo wel werkt ik hoop het namelijk wel even kijken of het zo wel werkt ik hoop het namelijk wel even kijken of het zo wel werkt ik hoop het namelijk weleven kijken of het zo wel werkt ik hoop het namelijk wel even kijken of het zo wel werkt ik hoop het namelijk wel1', 1, 1, 0),
+(40, 52, 'appeltaart', NULL, 'dit weekend ga ik een appeltaart bakken', 0, 0, 0),
+(41, 49, 'appeltaart123', NULL, 'dit weekend ga ik een appeltaart bakken123', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -104,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(300) NOT NULL,
   `userrole` enum('root','admin','moderator','user') NOT NULL DEFAULT 'user',
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
@@ -114,7 +133,8 @@ INSERT INTO `users` (`userID`, `name`, `username`, `password`, `email`, `userrol
 (48, 'user', 'user', '$2y$10$8Th/MrdBNodxjtrXZ6gq7.HeSWCy.5N4G3NF0Jvbkbw/g3j3X9Og2', 'user@user', 'user'),
 (49, 'admin', 'admin', '$2y$10$viGO72wGAKmLaesav5Zk8.tiUxOoN54QomGmPgYLt83rGjT2t9aLu', 'admin@admin', 'admin'),
 (50, 'moderator', 'moderator', '$2y$10$CxoLCSCraXXveZnBD.yyGeHq/spczKBgTk/mYASAo/sw6T3rWY2zi', 'moderator@moderator', 'moderator'),
-(51, 'root', 'root', '$2y$10$9L6RSTeqcHG5kZF3rgyxaOIisdLt2xgdOM3Yit04SzlTlP1sA/hCG', 'root@root', 'root');
+(51, 'root', 'root', '$2y$10$9L6RSTeqcHG5kZF3rgyxaOIisdLt2xgdOM3Yit04SzlTlP1sA/hCG', 'root@root', 'root'),
+(52, 'Miranda', 'snoopy', '$2y$10$dH7fDrHDJLAyfr0XKXJKXOSSkMtbTsdFV1o1HPIliaU4xqUk7W.P.', 'mirandagraeff@hotmail.com', 'user');
 
 --
 -- Beperkingen voor geëxporteerde tabellen
