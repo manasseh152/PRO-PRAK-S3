@@ -5,6 +5,7 @@ body {
 }
 
 header {
+  z-index: 5;
   background-color: var(--bg-element);
   box-shadow: var(--clr-text)    0px 0px 2px 0px;
 }

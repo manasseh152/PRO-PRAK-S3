@@ -1,7 +1,16 @@
 <?php
+
 include('php/scripts/functions.php');
 is_authorized(['user', 'moderator', 'admin', 'root']);
+
 $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER JOIN `users` ON `post`.`userID` = `users`.`userID` ORDER BY `postID` DESC";
+
+// $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER JOIN `users` ON `post`.`userID` = `users`.`userID` ORDER BY `postID` ASC";
+
+// $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER JOIN `users` ON `post`.`userID` = `users`.`userID` ORDER BY `upvote` DESC";
+
+// $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER JOIN `users` ON `post`.`userID` = `users`.`userID` ORDER BY `upvode` ASC";
+
 ?>
 
 <div class="posts">
@@ -9,15 +18,15 @@ $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER
   <div class="page-label">
     <h2>Discover</h2>
 
-    <div class="dropdown">
-      sort by
+    <a class="dropdown wide">
+      <p>sort by</p>
       <ul>
         <li><button>m</button></li>
         <li><button>m</button></li>
         <li><button>l</button></li>
         <li><button>l</button></li>
       </ul>
-    </div>
+    </a>
   </div>
 
   <?php showPost($sql); ?>
