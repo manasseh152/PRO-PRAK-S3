@@ -18,13 +18,13 @@ $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER
   <div class="page-label">
     <h2>Discover</h2>
 
-    <div class="dropdown wide">
+    <div class="dropdown wide prel">
       <button>sort by</button>
       <ul>
-        <li><button>m</button></li>
-        <li><button>m</button></li>
-        <li><button>l</button></li>
-        <li><button>l</button></li>
+        <li><button>most pop</button></li>
+        <li><button>most rel</button></li>
+        <li><button>lees pop</button></li>
+        <li><button>lees rel</button></li>
       </ul>
     </div>
   </div>
