@@ -24,6 +24,7 @@ $_SESSION["postID"] = $postID;
     </div>
     <div class="post-body">
       <input type="text" name="title" placeholder="title" value="'.$record["title"].'">
+      <input type="hidden" name="URL" value='. $_POST['URL'] .'>
       <textarea name="text" id="textarea" cols="30" rows="25" placeholder="type hier je verhaal">'.$record["text"].'</textarea>
     </div>
     <div class="post-comments">
