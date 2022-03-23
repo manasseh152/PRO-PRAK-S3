@@ -142,7 +142,14 @@ footer > * {
 		min-width: fit-content;
 		transform: scaleX(0%);
     background-color: var(--bg-element);
+		z-index: 1;
   }
+	li {
+		&:hover {
+			outline: 1px solid hsla(0, 0%, 50%, 0.5);
+			opacity: 0.8;
+		}
+	}
 	&.wide {
 		width: 10vw;
 		p {
