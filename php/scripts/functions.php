@@ -42,7 +42,7 @@ function showPost($sql)
   $result = mysqli_query($conn, $sql);
   $elementID = 1;
   while ($record = mysqli_fetch_assoc($result)) {
-    echo '<div id=' . $elementID . ' class="post">
+    echo '<div id=' . $elementID . ' class="post prel">
             <div class="post-header">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="24" height="24" rx="12" fill="#D7D7D7"/>
@@ -51,7 +51,7 @@ function showPost($sql)
               </svg>
               <p>' . $record["username"] . '</p>
               
-              <form class="dots dropdown" action="index.php?content=php/content/updatepost" method="post">
+              <div class="dots dropdown">
                 <input type="hidden" name="postID" value=' . $record["postID"] . '>
                   <button type="submit">
                     <svg width="16" height="4" viewBox="0 0 16 4" xmlns="http://www.w3.org/2000/svg">
@@ -59,9 +59,12 @@ function showPost($sql)
                     </svg>
                   </button>
                   <ul>
-                    hier moet if statment
+                    <li><a herf="#">most pop</a></li>
+                    <li><a herf="#">most rel</a></li>
+                    <li><a herf="#">lees pop</a></li>
+                    <li><a herf="#">lees rel</a></li>
                   </ul>
-              </form>
+              </div>
             </div>
             <div class="post-body">
               <h3>' . $record["title"] . '</h3>

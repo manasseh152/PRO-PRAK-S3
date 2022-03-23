@@ -18,15 +18,15 @@ $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER
   <div class="page-label">
     <h2>Discover</h2>
 
-    <a class="dropdown wide">
-      <p>sort by</p>
+    <div class="dropdown wide">
+      <button>sort by</button>
       <ul>
         <li><button>m</button></li>
         <li><button>m</button></li>
         <li><button>l</button></li>
         <li><button>l</button></li>
       </ul>
-    </a>
+    </div>
   </div>
 
   <?php showPost($sql); ?>

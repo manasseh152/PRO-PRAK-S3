@@ -136,6 +136,7 @@ footer > * {
 
   ul {
     position: absolute;
+		inset: 2rem 0 auto auto;
     padding: .1rem;
     width: 10vw;
 		min-width: fit-content;
@@ -164,4 +165,8 @@ footer > * {
 			transform: scaleX(100%);
 		}
 	}
+}
+
+.prel {
+	position: relative;
 }
