@@ -15,8 +15,8 @@
       <input class="btn-1" type="submit" value="SignUp">
     </form>
     <div class="login">
-      <p>You are a member? <a <?php echo ($active == "login" )? "active" : "" ?>" href="index.php?content=./php/components/login">Login</a></p>
-      <p>Stay as <a <?php echo ($active == "home" )? "active" : "" ?>" href="index.php?content=./php/content/home">Guest</a></p>
+      <p>You are a member? <a <?php echo ($active == "login" )? "active" : "" ?>" href="index.php?content=php/components/login">Login</a></p>
+      <p>Stay as <a <?php echo ($active == "home" )? "active" : "" ?>" href="index.php?content=php/content/home">Guest</a></p>
     </div>
   </div>
   </div>

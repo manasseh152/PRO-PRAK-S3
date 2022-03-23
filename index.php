@@ -1,3 +1,7 @@
+<?php
+  $active = (isset($_GET["content"]))? $_GET["content"]: "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +15,7 @@
   <script defer src="./js/app.js"></script>
 </head>
 
-<body class="">
+<body class="<?php echo ($active == "php/content/a-dashboard" || $active == "php/content/u-dashboard" || $active == "php/components/login" || $active == "php/components/register")? "big" : "" ?>">
   <?php include("./php/components/navbar.php"); ?>
 
   <main>
