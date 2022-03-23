@@ -65,7 +65,7 @@ function showPost($sql)
                         <input type="hidden" name="postID" value=' . $record["postID"] . '>
                         <input type="hidden" name="URL" value='. $_GET["content"] .'>
                         <button type="submit">
-                          gggg
+                          Update
                         </button>
                       </form>
                     </li>
@@ -74,7 +74,7 @@ function showPost($sql)
                         <input type="hidden" name="postID" value=' . $record["postID"] . '>
                         <input type="hidden" name="URL" value='. $_GET["content"] .'>
                         <button type="submit">
-                          gggg
+                          Delete
                         </button>
                       </form>
                     </li>
