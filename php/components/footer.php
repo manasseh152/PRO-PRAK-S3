@@ -75,7 +75,7 @@
       </div>
       <?php
       if (isset($_SESSION["userID"])) {
-        echo '<a class="btn-1" href="index.php?content=php/components/register">Open Account</a>';
+        echo '<a class="btn-1" href="index.php?content=php/content/u-dashboard">Open Account</a>';
       } else {
         echo '<a class="btn-1" href="index.php?content=php/components/register">Sign Up</a>';
       }
