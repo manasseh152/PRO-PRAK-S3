@@ -1,5 +1,6 @@
 <?php
 include('connect-db.php');
+
 function sanitize($raw_data)
 {
 
@@ -59,8 +60,24 @@ function showPost($sql)
                     </svg>
                   </button>
                   <ul>
-                    <li><a herf="#">most pop</a></li>
-                    <li><a herf="#">most rel</a></li>
+                    <li>
+                      <form action="index.php?content=php/content/updatepost" method="post">
+                        <input type="hidden" name="postID" value=' . $record["postID"] . '>
+                        <input type="hidden" name="URL" value='. $_GET["content"] .'>
+                        <button type="submit">
+                          Update
+                        </button>
+                      </form>
+                    </li>
+                    <li>
+                      <form action="index.php?content=php/scripts/delete-post" method="post">
+                        <input type="hidden" name="postID" value=' . $record["postID"] . '>
+                        <input type="hidden" name="URL" value='. $_GET["content"] .'>
+                        <button type="submit">
+                          Delete
+                        </button>
+                      </form>
+                    </li>
                     <li><a herf="#">lees pop</a></li>
                     <li><a herf="#">lees rel</a></li>
                   </ul>
@@ -109,6 +126,7 @@ function showPost($sql)
               <input class="" type="text" name="commentText" placeholder="Comment here....">
               <input type="hidden" name="postID" value=' . $record["postID"] . '>
               <input type="hidden" name="elementID" value=' . $elementID . '>
+              <input type="hidden" name="URL" value=' . $_GET['content'] . '>
             </form>
           </div>
         </div>';

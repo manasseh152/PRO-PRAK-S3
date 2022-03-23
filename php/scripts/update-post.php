@@ -1,6 +1,5 @@
 <?php
   include("php/scripts/functions.php");
-  include("php/scripts/connect-db.php");
 
   $postID = $_SESSION["postID"];
   unset($_SESSION["postID"]);
@@ -13,6 +12,6 @@
   } else {
     $sql = "UPDATE `post` SET `title` = '$title', `img` = NULL, `text` = '$text' WHERE `post`.`postID` = $postID";
     runStatement($sql);
-    header("Location: index.php?content=php/content/home");
+    header("Location: index.php?content=".$_POST['URL']."");
   }
   
