@@ -24,5 +24,5 @@ VALUES                  (NULL,
   'user')";
 
   $result = mysqli_query($conn, $sql);
-
-  header("Location:../../index.php");
+  echo "<script type='text/javascript'>alert('Uw account is gemaakt');</script>";
+  header("Refresh: 0;../../index.php");

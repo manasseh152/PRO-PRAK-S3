@@ -21,7 +21,10 @@
   $reportedPost = "SELECT * FROM `post` INNER JOIN `users` ON `post`.`userID` = `users`.`userID` WHERE `report` = 1";
   // run statement below where you want the reported post
   //showPost($reportedPost);
-
+  $allUsers = "SELECT `username` FROM `users`";
+  $allUsers = runStatement($allUsers);
+  
+  
   // percentage reported post van total post
   $percentage = $totalReports["totalReports"] / $totalPost["totalPost"] * 100;
 ?>
@@ -36,4 +39,7 @@
 </div>
 <div>
   <p><?= $percentage; ?></p>
+</div>
+<div>
+  <?php showUsers($allUsers); ?>   
 </div>
