@@ -92,24 +92,26 @@ body {
 	gap: 1rem;
 	&.big {
 		overflow: hidden;
-		grid-template-columns:
-
-		minmax(0.1rem, 1fr)
-		minmax(1px, 600px)
+		grid-template-columns: 
+		minmax(0.1rem, 1fr) 
+		minmax(1px, 600px)	
 		minmax(0.1rem, 1fr);
 
 		@media (min-width: 800px) {
+			grid-template-columns:
 			minmax(0.1rem, 1fr)
 			minmax(1px, 400px)
 			minmax(1px, 400px)
 			minmax(0.1rem, 1fr);
 		}
-
-		// minmax(0.1rem, 1fr)
-		// minmax(1px, 300px)
-		// minmax(300px, 450px)
-		// minmax(300px, 450px)
-		// minmax(0.1rem, 1fr);
+		@media (min-width: 1000px) {
+			grid-template-columns:
+			minmax(0.1rem, 1fr)
+			minmax(1px, 400px)
+			minmax(1px, 400px)
+			minmax(1px, 200px)
+			minmax(0.1rem, 1fr);
+		}
 	}
 }
 
