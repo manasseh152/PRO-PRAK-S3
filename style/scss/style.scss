@@ -100,7 +100,7 @@ body {
 		@media (min-width: 600px) {
 			grid-template-areas:
 			"h h h h"
-			". m m ."
+			". m p ."
 			"f f f f";
 			grid-template-columns:
 			minmax(0.1rem, 1fr)
@@ -111,7 +111,7 @@ body {
 		@media (min-width: 1000px) {
 			grid-template-areas:
 			"h h h h h"
-			". m m m ."
+			". u m p ."
 			"f f f f f";
 			grid-template-columns:
 			minmax(0.1rem, 1fr)
