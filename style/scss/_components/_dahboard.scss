@@ -1,0 +1,20 @@
+.dashboard {
+  height: 100%;
+	display: grid;
+	grid-template-columns:
+			minmax(1px, 200px)
+      minmax(1px, 400px)
+      minmax(1px, 400px);
+	grid-template-areas:
+			"u m p";
+  gap: 1rem;
+  &.u {
+    grid-area: u;
+  }
+  &.m {
+    grid-area: m;
+  }
+  &.p {
+    grid-area: p;
+  }
+}
