@@ -86,15 +86,30 @@ body {
 			minmax(0.1rem, 1fr);
 	position: relative;
 	grid-template-areas:
-			"h h h"
-			". m ."
-			"f f f";
+			"h h h h h"
+			". m m m ."
+			"f f f f f";
 	gap: 1rem;
 	&.big {
+		overflow: hidden;
 		grid-template-columns:
+
 		minmax(0.1rem, 1fr)
-		minmax(1px, 800px)
+		minmax(1px, 600px)
 		minmax(0.1rem, 1fr);
+
+		@media (min-width: 800px) {
+			minmax(0.1rem, 1fr)
+			minmax(1px, 400px)
+			minmax(1px, 400px)
+			minmax(0.1rem, 1fr);
+		}
+
+		// minmax(0.1rem, 1fr)
+		// minmax(1px, 300px)
+		// minmax(300px, 450px)
+		// minmax(300px, 450px)
+		// minmax(0.1rem, 1fr);
 	}
 }
 
