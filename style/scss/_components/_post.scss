@@ -5,6 +5,7 @@
 }
 
 .post {
+  word-wrap: break-word;
   background-color: var(--bg-element);
   display: flex;
   flex-direction: column;
