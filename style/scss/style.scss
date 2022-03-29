@@ -91,7 +91,9 @@ body {
 			"f f f";
 	gap: 1rem;
 	&.big {
-		overflow: hidden;
+		@media (min-width: 800px) {
+			overflow: hidden;			
+		}
 		grid-template-columns: 
 		minmax(0.1rem, 1fr) 
 		minmax(1px, 1200px)	
