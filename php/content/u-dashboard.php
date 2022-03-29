@@ -15,6 +15,7 @@ $totalUserPost = mysqli_fetch_assoc($totalUserPost);
 $sql = "SELECT SUM(`upvote`) as `totalUpvotes` FROM `post` WHERE `userID` = $user";
 $totalUpvotes = runStatement($sql);
 $totalUpvotes = mysqli_fetch_assoc($totalUpvotes);
+if($totalUpvotes['totalUpvotes'] == NULL) {$totalUpvotes['totalUpvotes'] = 0;}
 
 
 // totaal comments van user
@@ -22,6 +23,8 @@ $sql = "SELECT COUNT(`commentID`) as `totalComments` FROM `comments` WHERE `user
 $totalComments = runStatement($sql);
 $totalComments = mysqli_fetch_assoc($totalComments);
 
+// all user post
+$posts = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER JOIN `users` ON `post`.`userID` = `users`.`userID` WHERE `users`.`userID` = $user";
 
 // alle posts
 $sql = "SELECT COUNT(`postID`) AS `totalPost` FROM `post`";
@@ -40,12 +43,12 @@ if ($totalUserPost["totalUserPost"] = 0) {
     <p>user dashboard</p>
   </div>
   <div class="m">
-    <p><?= $totalUserPost["totalUserPost"] ?></p>
-    <p><?= $totalUpvotes["totalUpvotes"] ?></p>
-    <p><?= $totalComments["totalComments"] ?></p>
-    <p><?= $totalPost["totalPost"] ?></p>
+    <p>Total posts: <?= $totalUserPost["totalUserPost"] ?></p>
+    <p>Total likes: <?= $totalUpvotes["totalUpvotes"] ?></p>
+    <p>Total comments: <?= $totalComments["totalComments"] ?></p>
+    <p>Percental of posts: <?= $percental ?></p>
   </div>
-  <div class="p">
-
+  <div class="p posts">
+    <?php showPost($posts) ?>
   </div>
 </div>
