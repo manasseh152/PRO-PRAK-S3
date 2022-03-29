@@ -35,9 +35,12 @@ $percentage = $totalReports["totalReports"] / $totalPost["totalPost"] * 100;
     <?php showUsers($allUsers); ?>
   </div>
   <div class="m">
-
+      <p>Total posts: <?= $totalPost["totalPost"] ?></p>
+      <p>Total users: <?= $totalUsers["totalUsers"] ?></p>
+      <p>Total reports: <?= $totalReports["totalReports"] ?></p>
+      <p>Percental of posts: <?= $percentage ?></p>
   </div>
-  <div class="p">
-
+  <div class="p posts">
+  <?php showPost($reportedPost); ?>
   </div>
 </div>

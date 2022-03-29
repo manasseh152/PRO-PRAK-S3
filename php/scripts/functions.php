@@ -79,18 +79,18 @@ function showPost($sql)
                       </button>
                     </form>
                   </li>
-                  <li>
-                  <form action="index.php?content=php/scripts/report-post" method="post">
-                  <input type="hidden" name="postID" value=' . $record["postID"] . '>
-                  <input type="hidden" name="URL" value=' . $_GET["content"] . '>
-                  <button type="submit">
-                    Report
-                  </button>
-                </form>
-                  </li>';
+                  ';
     }
     echo '
-                    
+                    <li>
+                    <form action="index.php?content=php/scripts/report-post" method="post">
+                    <input type="hidden" name="postID" value=' . $record["postID"] . '>
+                    <input type="hidden" name="URL" value=' . $_GET["content"] . '>
+                    <button type="submit">
+                      Report
+                    </button>
+                  </form>
+                    </li>
                     <li><a herf="#">lees pop</a></li>
                     <li><a herf="#">lees rel</a></li>
                   </ul>
