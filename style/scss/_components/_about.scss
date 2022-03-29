@@ -1,0 +1,48 @@
+.about-form {
+
+  .form {
+    background-color: var(--bg-element);
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5rem;
+    input,
+    textarea {
+      border: none;
+      font-size: 1.2rem;
+      padding: .2rem;
+      background-color: var(--bg-body);
+      resize: none;
+      color: inherit;
+      border-radius: .2rem;
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.698);
+      }
+    }
+    > *:nth-child(1) {
+      width: 50%;
+    }
+    > *:nth-child(2) {
+      width: 48%;
+    }
+    > *:nth-child(3) {
+      width: 60%;
+    }
+    > *:nth-child(4) {
+      width: 38%;
+    }
+    > *:nth-child(5) {
+      width: 100%;
+    }
+    > div {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      * {
+        width: 49.5%;
+      }
+    }
+  }
+}
