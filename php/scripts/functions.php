@@ -77,6 +77,15 @@ function showPost($sql) {
                         Delete
                       </button>
                     </form>
+                  </li>
+                  <li>
+                  <form action="index.php?content=php/scripts/report-post" method="post">
+                  <input type="hidden" name="postID" value=' . $record["postID"] . '>
+                  <input type="hidden" name="URL" value='. $_GET["content"] .'>
+                  <button type="submit">
+                    Report
+                  </button>
+                </form>
                   </li>';
                   }echo'
                     
@@ -157,23 +166,3 @@ function showUsers($users) {
     ';
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-// if (!isset($_SESSION["userID"])) {
-//   // gebruiker is niet ingelogd
-// } elseif($_SESSION["userID"] = $username) {
-//   // gebruiker is eigenaar post
-// } elseif($_SESSION["userrole"] = 'admin' || 'root') {
-//   // gebruiker is admin of root
-// } else {
-//   // report knop
-// }
