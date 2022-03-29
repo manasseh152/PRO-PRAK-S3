@@ -5,6 +5,7 @@
     if (!isset($_SESSION["userID"])) {
       include("./php/components/login.php");
     } else {
+      $_GET["content"] = './php/content/home.php';
       include("./php/content/home.php");
     }
   }
