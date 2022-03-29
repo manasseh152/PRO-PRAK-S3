@@ -1,20 +1,55 @@
 .dashboard {
+  word-wrap: break-word;
   height: 100%;
 	display: grid;
 	grid-template-columns:
-			minmax(1px, 200px)
-      minmax(1px, 400px)
-      minmax(1px, 400px);
+    minmax(100px, 500px)
+    minmax(100px, 500px)
+  ;
+  grid-template-rows: 
+    1fr
+    2fr
+  ;
 	grid-template-areas:
-			"u m p";
+			"u m"
+      "p p";
   gap: 1rem;
-  &.u {
+  @media (min-width: 600px) {
+    grid-template-columns:
+    minmax(100px, 200px)
+    minmax(100px, 600px)
+    ;
+    grid-template-areas:
+    "u p"
+    "m p";
+  }
+  @media (min-width: 800px) {
+    grid-template-columns:
+    minmax(100px, 200px)
+    minmax(100px, 300px)
+    minmax(100px, 600px)
+    ;
+    grid-template-rows: 
+    unset;
+    grid-template-areas:
+    "u m p";
+  }
+  > * > * {
+    padding: 1rem;
+  }
+  .u {
     grid-area: u;
+    > * {
+      background-color: var(--bg-element);
+    }
   }
-  &.m {
+  .m {
     grid-area: m;
+    > * {
+      background-color: var(--bg-element);
+    }
   }
-  &.p {
+  .p {
     grid-area: p;
   }
 }
