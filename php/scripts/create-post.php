@@ -1,7 +1,7 @@
 <?php
   include("php/scripts/functions.php");
   include("php/scripts/connect-db.php");
-
+  is_authorized(['root', 'admin', 'moderator', 'user']);
   $userID = $_SESSION["userID"];
   $title = sanitize($_POST["title"]);
   $text = sanitize($_POST["text"]);

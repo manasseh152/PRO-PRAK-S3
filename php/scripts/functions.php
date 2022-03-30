@@ -1,15 +1,16 @@
 <?php
 include('connect-db.php');
 
+// sanitize() prevents users to insert data we dont want
 function sanitize($raw_data)
 {
-
   global $conn;
   $data = mysqli_real_escape_string($conn, $raw_data);
   $data = htmlspecialchars($data);
   return $data;
 }
 
+// runStatement() runs the sql statement given as parameter
 function runStatement($sql)
 {
   global $conn;
@@ -17,6 +18,8 @@ function runStatement($sql)
   return $result;
 }
 
+// is_authorized() is getting an array of strings
+// if current userrole is not in array redirect to home page (user not authorized)
 function is_authorized($userroles)
 {
   if (!isset($_SESSION["userID"])) {
@@ -28,7 +31,7 @@ function is_authorized($userroles)
   }
 }
 
-
+// getComments() gets the comments of a post
 function getComments($postID)
 {
   global $conn;
@@ -37,6 +40,7 @@ function getComments($postID)
   return $comments;
 }
 
+// showPost() shows all the post from the sql statement
 function showPost($sql)
 {
   global $conn;
@@ -150,6 +154,7 @@ function showPost($sql)
   }
 }
 
+// showUsers() show all the users with an sql statement
 function showUsers($users)
 {
   while ($user = mysqli_fetch_assoc($users)) {

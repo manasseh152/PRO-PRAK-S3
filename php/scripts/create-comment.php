@@ -1,6 +1,7 @@
 <?php
   include("connect-db.php");
   include("functions.php");
+  is_authorized(['root', 'admin', 'moderator', 'user']);
   $URL = $_POST['URL'];
   if (!isset($_SESSION["userID"])) {
     header("Location: index.php?content=php/content/home");
