@@ -31,7 +31,7 @@ $sql = "SELECT COUNT(`postID`) AS `totalPost` FROM `post`";
 $totalPost = runStatement($sql);
 $totalPost = mysqli_fetch_assoc($totalPost);
 if ($totalUserPost["totalUserPost"] == 0) {
-  echo "niet mogelijk";
+  $percental = 0;
 } else {
   $percental =  $totalUserPost["totalUserPost"] / $totalPost["totalPost"] * 100;
 }
@@ -46,7 +46,7 @@ if ($totalUserPost["totalUserPost"] == 0) {
     <p>Total posts: <?= $totalUserPost["totalUserPost"] ?></p>
     <p>Total likes: <?= $totalUpvotes["totalUpvotes"] ?></p>
     <p>Total comments: <?= $totalComments["totalComments"] ?></p>
-    <p>Percental of posts: <?= $percental ?></p>
+    <p>Percental of posts: <?= $percental ?>%</p>
   </div>
   <div class="p posts">
     <?php showPost($posts) ?>

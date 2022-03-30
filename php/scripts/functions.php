@@ -91,8 +91,6 @@ function showPost($sql)
                     </button>
                   </form>
                     </li>
-                    <li><a herf="#">lees pop</a></li>
-                    <li><a herf="#">lees rel</a></li>
                   </ul>
               </div>
             </div>

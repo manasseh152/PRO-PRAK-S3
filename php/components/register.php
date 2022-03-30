@@ -1,17 +1,14 @@
 <div class="test">
 <div class="register">
     <h1>Sign Up</h1>
-    <form action="./php/scripts/create-user.php" method="post">
+    <form action="index.php?content=php/scripts/create-user" method="post">
       <div class="inputs">
         <input class="input" type="text" name="user" class="" value="" placeholder="Name">
-
         <input class="input" type="text" name="username" class="" value="" placeholder="Username">
-
         <input class="input" type="password" name="password" class="" value="" placeholder="Password">
-
+        <input class="input" type="password" name="passwordCheck" placeholder="Password Check">
         <input class="input" type="email" name="email" class="" value="" placeholder="E-mail">
       </div>
-
       <input class="btn-1" type="submit" value="SignUp">
     </form>
     <div class="login">

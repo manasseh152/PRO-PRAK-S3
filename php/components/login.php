@@ -3,8 +3,8 @@
     <h1>Sign In</h1>
     <form action="index.php?content=/php/scripts/login-script" method="post">
       <div class="inputs">
-        <input class="input" type="text" name="username" class="" value="" placeholder="Username">
-        <input class="input" type="password" name="password" class="" value="" placeholder="Password">
+        <input class="input" type="text" name="username" value="" placeholder="Username">
+        <input class="input" type="password" name="password" value="" placeholder="Password">
       </div>
       <input class="btn-1" type="submit" value="SignIn">
     </form>
