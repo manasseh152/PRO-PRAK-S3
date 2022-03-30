@@ -51,11 +51,15 @@
 }
 
 .post-body {
-  aspect-ratio: 1 / .5;
   box-shadow: 0 1px 0 0 var(--clr-text);
 }
 
 .post-comments {
+  > div {
+    display: flex;
+    gap: .3rem;
+    align-items: center;
+  }
   form {
     display: flex;
     gap: .3rem;
