@@ -1,5 +1,6 @@
 <?php
 include("php/scripts/functions.php");
+is_authorized(['root', 'admin', 'moderator', 'user']);
 $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER JOIN `users` ON `post`.`userID` = `users`.`userID` WHERE `hidden` = 1 ORDER BY `postID` DESC LIMIT 0, 10";
 ?>
 <div class="about-form">
@@ -18,7 +19,7 @@ $sql = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INNER
       </svg>
       <p><?= $_SESSION["username"] ?></p>
     </div>
-    <form action="index.php?content=php/scripts/contact-form" method="POST">
+    <form id="about-form" action="index.php?content=php/scripts/contact-form" method="POST">
       <div class="form">
         <input type="text" name="name" id="name" placeholder="Fullname">
         <input type="text" name="phone" id="phone" placeholder="Phonenumber">
