@@ -30,7 +30,7 @@ $posts = "SELECT `postID`, `username`, `title`, `text`, `upvote` FROM `post` INN
 $sql = "SELECT COUNT(`postID`) AS `totalPost` FROM `post`";
 $totalPost = runStatement($sql);
 $totalPost = mysqli_fetch_assoc($totalPost);
-if ($totalUserPost["totalUserPost"] = 0) {
+if ($totalUserPost["totalUserPost"] == 0) {
   echo "niet mogelijk";
 } else {
   $percental =  $totalUserPost["totalUserPost"] / $totalPost["totalPost"] * 100;
